@@ -50,6 +50,7 @@
   <div class="title-block">
     <h1 class="vt-title">{TITLE}</h1>
     <p class="sub">A book in {flat.length} sections.</p>
+    <p class="cli"><span class="cli-prompt">$</span> <code>npm create sveltekitbook@latest</code></p>
   </div>
 
   <div class="meta bottom">
@@ -112,6 +113,29 @@
     margin-top: 1.6rem;
     max-width: 52ch;
     line-height: 1.4;
+  }
+
+  .cli {
+    margin-top: 1.6rem;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0.9rem;
+    background: rgba(20, 17, 13, 0.06);
+    border-radius: 4px;
+    user-select: all;
+  }
+  .cli-prompt {
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .cli code {
+    font: inherit;
+    background: transparent;
+    padding: 0;
   }
 
   button {
