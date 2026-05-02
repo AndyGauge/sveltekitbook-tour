@@ -45,6 +45,12 @@ const raw = [
     eli5: 'A book has more than just pages — it has a table of contents, a glossary, an "about" page. You pick which of those to include.'
   },
   {
+    title: 'Chapters and steps',
+    gesture: 'When the book is long enough to need internal structure, sections group into chapters and pages can alternate prose with code.',
+    body: 'For longer books, the chaptered structure groups sections under chapters. Each section carries a `chapterId`, a `chapterNum`, and a `chapterTitle`; consecutive sections with the same id fall into the same chapter automatically — there is no separate tree to maintain. The reader gets a chapter rail at the top of every page that names the current chapter and lets them jump to the previous or next one. Inside a section, the optional `steps` array lets a page alternate prose and code in a strict rhythm — `{ prose, code, lang }` per step. The renderer shows a paragraph, then a syntax-highlighted block, then another paragraph, in turn. Useful for tutorials and explainers where the argument moves a few lines of code at a time. [Too Many Lists](https://andygauge.github.io/too-many-lists/16) is the longest demonstration: dozens of chapters that build progressively more correct linked lists in Rust, each chapter a sequence of prose/code steps.',
+    eli5: 'A long book gets chapters. Inside a section, you can also alternate explanation and code, like a tutorial that walks you through a snippet paragraph by paragraph.'
+  },
+  {
     title: 'The runtime',
     gesture: 'Small on purpose: gestures, md, palette, Giscus. Everything else is yours.',
     body: 'The `sveltekitbook` npm package holds only the parts that are truly shared and stable. `createPager` turns wheel + touch + arrow keys into next/previous navigation. `md(text, opts)` parses inline `**bold**`, `*em*`, and `[[term]]`. `makeSpectrum` builds the −N..+N color ramp. `Giscus.svelte` mounts GitHub Discussions comments per page. Everything else — the cover, the page layout, the rooms — gets scaffolded *into* your project as editable files.',
