@@ -63,6 +63,12 @@ const raw = [
     eli5: 'Whatever device you read on, "next page" works the way that device expects. Swipe on a phone, scroll on a laptop, arrow key on a keyboard.'
   },
   {
+    title: 'Chapters and steps',
+    gesture: 'When the book is long enough to need internal structure, sections group into chapters and pages can alternate prose with code.',
+    body: 'For longer books, the chaptered structure groups sections under chapters. Each section carries a `chapterId`, a `chapterNum`, and a `chapterTitle`; consecutive sections with the same id fall into the same chapter automatically — there is no separate tree to maintain. The reader gets a chapter rail at the top of every page that names the current chapter and lets them jump to the previous or next one. Inside a section, the optional `steps` array lets a page alternate prose and code in a strict rhythm — `{ prose, code, lang }` per step. The renderer shows a paragraph, then a syntax-highlighted block, then another paragraph, in turn. Useful for tutorials and explainers where the argument moves a few lines of code at a time. [Too Many Lists](https://andygauge.github.io/too-many-lists/16) is the longest demonstration: dozens of chapters that build progressively more correct linked lists in Rust, each chapter a sequence of prose/code steps.',
+    eli5: 'A long book gets chapters. Inside a section, you can also alternate explanation and code, like a tutorial that walks you through a snippet paragraph by paragraph.'
+  },
+  {
     title: 'Static, deployable',
     gesture: 'It is a SvelteKit site with adapter-static. `npm run build`, drop the folder, done.',
     body: 'The output is a plain static site — HTML, CSS, JS, no server. GitHub Pages, Netlify, Cloudflare, an S3 bucket, a USB stick. There is no backend to keep alive. Comments piggyback on GitHub Discussions through Giscus, so even the dynamic part is hosted somewhere stable. A book you write today should still load in ten years.',
