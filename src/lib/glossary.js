@@ -1,4 +1,4 @@
-// Term definitions. Reference any of these from a section's `body`, `gesture`,
+// Term definitions. Reference any of these from a section's `body`, `hook`,
 // `eli5`, or any other rendered-through-md field as `[[term]]` — it will
 // auto-link to `/glossary#term-slug`. Case-insensitive match.
 //
@@ -9,18 +9,18 @@
 export const GLOSSARY = {
   sveltekitbook: {
     definition:
-      'A SvelteKit-based reading format: one topic per page, gesture + body + plain-terms, navigated by wheel / swipe / arrow. Two packages: `sveltekitbook` (the small runtime — gestures, md, palette, Giscus) and `create-sveltekitbook` (the scaffolder).',
-    see: ['gesture', 'continuum']
+      'A SvelteKit-based reading format: one topic per page, hook + body + plain-terms, navigated by wheel / swipe / arrow. Two packages: `sveltekitbook` (the small runtime — gestures, md, palette, Giscus) and `create-sveltekitbook` (the scaffolder).',
+    see: ['hook', 'continuum']
   },
-  gesture: {
+  hook: {
     definition:
-      'The one-sentence hook at the top of every page — what the reader could quote back. Distinct from the body, which carries the argument. The gesture lives where a pull-quote would sit in print.',
+      'The one-sentence hook at the top of every page — what the reader could quote back. Distinct from the body, which carries the argument. The hook lives where a pull-quote would sit in print.',
     see: ['page']
   },
   page: {
     definition:
-      'One topic, one screen. Title, gesture, body (under ~400 words), optional plain-terms aside, optional source. Rendered from a single object in `outline.js`; numbered automatically by reading order.',
-    see: ['outline', 'gesture']
+      'One topic, one screen. Title, hook, body (under ~400 words), optional plain-terms aside, optional source. Rendered from a single object in `outline.js`; numbered automatically by reading order.',
+    see: ['outline', 'hook']
   },
   outline: {
     definition:

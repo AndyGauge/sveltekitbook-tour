@@ -39,7 +39,7 @@
         edges, no architecture, nowhere for a reader to stand. This format
         is a wager that the failure is in the container, not the model.
         Give the same content one topic per page, with a one-sentence
-        gesture and a plain-terms aside, and a reader can hold it. The
+        hook and a plain-terms aside, and a reader can hold it. The
         scaffold is also a prompt: walk an agent through what a *book*
         needs and the output comes back human-shaped.
       </p>
