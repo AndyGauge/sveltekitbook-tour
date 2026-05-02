@@ -3,7 +3,7 @@
   import { base } from '$app/paths';
   import { flat } from '$lib/outline.js';
   import { createPager } from 'sveltekitbook/gestures';
-  import { TITLE, AUTHOR, YEAR } from '$lib/config.js';
+  import { TITLE, AUTHOR, YEAR, SITE_URL } from '$lib/config.js';
 
   let dragOffset = $state(0);
   let dragging = $derived(dragOffset !== 0);
@@ -39,6 +39,12 @@
 >
   <div class="meta top">
     <span>{AUTHOR ? `${AUTHOR} · ` : ''}{YEAR}</span>
+    {#if SITE_URL}
+      <a class="qr" href={SITE_URL} aria-label="Open this book on its canonical URL">
+        <img src="{base}/qr.svg" alt="QR code linking to {SITE_URL}" width="84" height="84" />
+        <span class="qr-label">scan to share</span>
+      </a>
+    {/if}
   </div>
 
   <div class="title-block">
@@ -145,5 +151,29 @@
   .cover-nav :global(a:hover) {
     color: var(--ink);
     border-bottom-color: var(--ink);
+  }
+
+  .qr {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--muted);
+    transition: color 160ms ease;
+  }
+  .qr:hover { color: var(--ink); }
+  .qr img {
+    display: block;
+    width: 84px;
+    height: 84px;
+    image-rendering: pixelated;
+  }
+  .qr-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+  }
+
+  @media (max-width: 720px) {
+    .qr img { width: 64px; height: 64px; }
   }
 </style>
